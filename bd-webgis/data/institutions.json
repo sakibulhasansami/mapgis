@@ -1,0 +1,23 @@
+{
+  "dataset": "institutions",
+  "version": "0.1-demo",
+  "note": "Demo data. Records marked 'unverified' must be checked against an official source before real use.",
+  "records": [
+    {
+      "id": "inst-001",
+      "name": "Rajshahi Government Survey Institute",
+      "category": "Educational Institution",
+      "type": "Survey Institute",
+      "ownership": "Government",
+      "address": null,
+      "district": "Rajshahi",
+      "division": "Rajshahi",
+      "lat": 24.3745,
+      "lng": 88.6042,
+      "description": "Government survey institute located in Rajshahi. Detailed description not yet verified.",
+      "website": null,
+      "verification": "unverified",
+      "notes": "Coordinates are a PLACEHOLDER at Rajshahi city centre, not the campus location. Street address and website are not yet verified. Replace lat/lng with surveyed coordinates."
+    }
+  ]
+}

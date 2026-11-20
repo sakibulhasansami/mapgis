@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bangladesh Web GIS Demo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside id="sidebar" class="sidebar">
+    <header class="brand">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+      <div><h1>Bangladesh Web GIS</h1><p>Demo · local JSON data</p></div>
+    </header>
+
+    <section>
+      <input id="search" type="search" placeholder="Search name, category, district…" autocomplete="off" aria-label="Search records">
+      <ul id="results" class="results" hidden></ul>
+    </section>
+
+    <section>
+      <h2>Dashboard</h2>
+      <div id="dashboard" class="stats"></div>
+      <p id="dash-note" class="muted"></p>
+    </section>
+
+    <section>
+      <h2>Categories</h2>
+      <div id="layer-tree" class="tree"></div>
+    </section>
+
+    <section>
+      <h2>Import</h2>
+      <input id="import-file" type="file" accept=".json,application/json" hidden>
+      <div class="row">
+        <button id="import-btn" class="btn">Import JSON</button>
+        <button id="clear-import" class="btn ghost" hidden>Clear imported</button>
+      </div>
+      <div id="import-msg" class="msg" role="status" aria-live="polite"></div>
+      <details class="muted"><summary>Expected format</summary>
+<pre>{ "records": [
+  { "name": "Example",
+    "category": "Hospital",
+    "type": "General",
+    "lat": 24.37, "lng": 88.60 }
+] }</pre>
+        <p>Optional: id, ownership, address, district, division, description, website, iata, icao, verification, notes.</p>
+      </details>
+    </section>
+
+    <footer class="muted">Map © OpenStreetMap contributors. Data is demo-only and not connected to any live database.</footer>
+  </aside>
+
+  <main class="map-wrap">
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle sidebar">☰</button>
+    <div id="map"></div>
+    <div id="load-error" class="load-error" hidden></div>
+  </main>
+
+  <aside id="detail" class="detail" hidden aria-live="polite">
+    <button id="detail-close" class="close" aria-label="Close details">×</button>
+    <div id="detail-body"></div>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
